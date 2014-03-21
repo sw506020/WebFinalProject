@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+        <property name="hibernate.connection.driver_class">
+            com.mysql.jdbc.Driver
+        </property>
+
+        <!-- Assume test is the database name -->
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost/FinalTestDB
+        </property>
+        <property name="hibernate.connection.username">
+            suwei
+        </property>
+        <property name="hibernate.connection.password">
+            123
+        </property>
+
+        <!-- List of XML mapping files -->
+        <!--<mapping resource="Employee.hbm.xml"/>-->
+        <mapping class="org.wws.entity.user.User" />
+        <mapping class="org.wws.entity.user.Address" />
+        <mapping class="org.wws.entity.department.Department" />
+        <mapping class="org.wws.entity.employee.Employee" />
+        <mapping class="org.wws.entity.role.Role" />
+        <mapping class="org.wws.entity.post.Comment" />
+        <mapping class="org.wws.entity.post.PhotoUrl" />
+        <mapping class="org.wws.entity.post.Post" />
+
+
+    </session-factory>
+</hibernate-configuration>
